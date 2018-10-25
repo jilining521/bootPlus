@@ -9,7 +9,7 @@ import cn.imp.bootplus.entity.user.User;
  *  服务类
  * </p>
  *
- * @author Mht
+ * @author jln
  * @since 2018-10-25
  */
 public interface IUserService extends IService<User> {
