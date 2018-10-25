@@ -11,6 +11,6 @@ spring:
 #mybatis-plus
 mybatis-plus:
   mapper-locations:
-  - classpath:com/mht/springbootmybatisplus/mapper/xml/*.xml
+  - classpath:cn/imp/bootplus/mapper/*/*Mapper.xml
   type-aliases-package: cn.imp.bootplus.entity
 
