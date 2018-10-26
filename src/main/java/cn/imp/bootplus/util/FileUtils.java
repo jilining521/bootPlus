@@ -15,7 +15,9 @@ import org.springframework.web.multipart.MultipartFile;
  *
  */
 public class FileUtils {
-	
+	private FileUtils() {
+		
+	}
 	/**
 	 * 	文件上传
 	 * @param file

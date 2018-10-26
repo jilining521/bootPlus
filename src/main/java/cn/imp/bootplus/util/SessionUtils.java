@@ -14,6 +14,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
  */
 public class SessionUtils {
 	
+	private SessionUtils() {}
 	/**
 	 * 	全局取得session方法
 	 * 	纪立宁
@@ -30,4 +31,5 @@ public class SessionUtils {
         //HttpServletResponse response = attrs.getResponse();
         return session;
 	}
+	
 }

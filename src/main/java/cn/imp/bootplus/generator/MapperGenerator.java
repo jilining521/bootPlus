@@ -22,7 +22,7 @@ public class MapperGenerator {
        // 全局配置
        GlobalConfig gc = new GlobalConfig();
        gc.setAuthor("Jln");
-       gc.setOutputDir("D://workspace/spring-boot-mybatis-plus/src/main/java");
+       gc.setOutputDir("G://stswork/bootPlus/src/main/java");
        gc.setFileOverride(false);// 是否覆盖同名文件，默认是false
        gc.setActiveRecord(true);// 不需要ActiveRecord特性的请改为false
        gc.setEnableCache(false);// XML 二级缓存
@@ -59,7 +59,7 @@ public class MapperGenerator {
        // strategy.setCapitalMode(true);// 全局大写命名 ORACLE 注意
        strategy.setTablePrefix(new String[] { "" });// 此处可以修改为您的表前缀
        strategy.setNaming(NamingStrategy.nochange);// 表名生成策略
-       strategy.setInclude(new String[] { "bootplus_system_user" }); // 需要生成的表
+       strategy.setInclude(new String[] { "bootplus_system_menu" }); // 需要生成的表
        // strategy.setExclude(new String[]{"test"}); // 排除生成的表
        // 自定义实体父类
        // strategy.setSuperEntityClass("com.baomidou.demo.TestEntity");

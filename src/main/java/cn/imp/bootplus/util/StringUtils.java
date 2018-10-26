@@ -7,6 +7,10 @@ package cn.imp.bootplus.util;
  *
  */
 public class StringUtils {
+	
+	private StringUtils() {
+	}
+	
 	/**
 	 * 判断字符串是否为null或 ""
 	 * 
