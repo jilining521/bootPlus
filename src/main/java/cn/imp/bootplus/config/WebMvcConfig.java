@@ -15,7 +15,8 @@ import cn.imp.bootplus.interceptor.UrlInterceptor;
 
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurationSupport {
-
+	
+	public static final String PROJECT_NAME = "/bootPlus"; //项目名称
 	private static final String VIEW_PREFIX = "/view/";// 视图前缀
 	private static final String VIEW_SUFFIX = ".jsp";// 视图后缀
 	private static final String VIEW_CONTENT_TYPE = "text/html;charset=UTF-8";// 视图的内容类型。
@@ -23,7 +24,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
 	@Override
 	protected void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new UrlInterceptor()).addPathPatterns("/**")
-			.excludePathPatterns("/static/**","/login","*.js","*.css");
+			.excludePathPatterns("/static/**","/login","*.js","*.css","/sign");  //设置排除的路径
 	}
 
 	/**
@@ -48,7 +49,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
 	 */
 	@Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("forward:/login");
+        registry.addViewController("/").setViewName("forward:/index"); //如果访问跟路径，则自动定位到index页面
         registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
         super.addViewControllers(registry);
     } 

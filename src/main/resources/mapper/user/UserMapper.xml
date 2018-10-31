@@ -2,15 +2,63 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.imp.bootplus.mapper.user.UserMapper">
 
-    <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="cn.imp.bootplus.entity.user.User">
-        <id column="userId" property="userId" />
-        <result column="userName" property="userName" />
-        <result column="userAge" property="userAge" />
-        <result column="birthday" property="birthday" />
-        <result column="phoneNum" property="phoneNum" />
-        <result column="address" property="address" />
-        <result column="remark" property="remark" />
-    </resultMap>
-
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap"
+		type="cn.imp.bootplus.entity.user.User">
+		<id column="userId" property="userId" />
+		<result column="userName" property="userName" />
+		<result column="userAge" property="userAge" />
+		<result column="birthday" property="birthday" />
+		<result column="phoneNum" property="phoneNum" />
+		<result column="address" property="address" />
+		<result column="remark" property="remark" />
+		<result column="modTime" property="modTime" />
+		<result column="password" property="password" />
+		<result column="delState" property="delState" />
+	</resultMap>
+	<select id="verificationUser" resultType="int">
+		select count(1) from
+		bootplus_system_user
+		where userName = #{userName} and password = #{password}
+	</select>
+	<select id="findUserByCondition" parameterType="cn.imp.bootplus.entity.user.User" 
+			resultType="cn.imp.bootplus.entity.user.User">
+		select <include refid="select_columns"></include> from bootplus_system_user
+		where 1=1 <include refid="where"></include>
+	</select>
+	<sql id="select_columns">
+		userId,userName,userAge,birthday,phoneNum,address,remark,modTime,password,delState
+	</sql>
+	<sql id="where">
+		<if test="condition.userId != null and condition.userId != ''">
+			and userId = #{condition.userId}
+		</if>
+		<if test="condition.userId != null and condition.userId != ''">
+			and userName = #{condition.userName}
+		</if>
+		<if test="condition.userAge != null">
+			and userAge = #{condition.userAge}
+		</if>
+		<if test="condition.birthday != null">
+			and birthday = #{condition.birthday}
+		</if>
+		<if test="condition.phoneNum != null">
+			and phoneNum = #{condition.phoneNum}
+		</if>
+		<if test="condition.address != null and condition.userId != ''">
+			and address = #{condition.address}
+		</if>
+		<if test="condition.remark != null and condition.userId != ''">
+			and remark = #{condition.remark}
+		</if>
+		<if test="condition.modTime != null">
+			and modTime = #{condition.modTime}
+		</if>
+		<if test="condition.password != null and condition.userId != ''">
+			and password = #{condition.password}
+		</if>
+		<if test="condition.delState != null">
+			and delState = #{condition.delState}
+		</if>
+	</sql>
 </mapper>

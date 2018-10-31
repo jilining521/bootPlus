@@ -44,7 +44,6 @@ public class UserController {
 	public ModelAndView index() throws Exception {
 		ModelAndView mvc = new ModelAndView("index");
 		mvc.addObject("hello", "hello world");
-		userService.getUser("");
 		return mvc;
 	}
 

@@ -6,6 +6,7 @@ import cn.imp.bootplus.entity.user.User;
 import cn.imp.bootplus.mapper.user.UserMapper;
 import cn.imp.bootplus.service.user.IUserService;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,20 +25,24 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional(propagation = Propagation.REQUIRED, rollbackForClassName = "java.lang.Exception")
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
-	
+
 	@Autowired
 	private UserMapper userMapper;
-	
+
 	@Override
-	public User getUser(String id) throws Exception {
-		User u = new User();
-		u.setUserId(UUID.randomUUID().toString());
-		u.setUserName("test");
-		userMapper.insert(u);
-		if("111".equals(id)) {
-			throw new Exception("出异常了");
-		}
-		return null;
+	public User findUserById(String id) throws Exception {
+		return userMapper.selectById(id);
+	}
+
+	@Override
+	public boolean verificationUser(String username, String password) throws Exception {
+		int count = userMapper.verificationUser(username, password);
+		return count == 1;
+	}
+
+	@Override
+	public List<User> findUserByCondition(User condition) throws Exception {
+		return userMapper.findUserByCondition(condition);
 	}
 
 }

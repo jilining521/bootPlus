@@ -3,7 +3,11 @@ package cn.imp.bootplus.entity.user;
 import java.util.Date;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+
+import cn.imp.bootplus.enums.system.DelState;
+
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 
 /**
  * <p>
@@ -31,6 +35,12 @@ public class User extends Model<User> {
     private String address;
 
     private String remark;
+    
+    private String password;
+    
+    private Date modTime;
+    
+    private DelState delState;
 
     public String getUserId() {
         return userId;
@@ -86,8 +96,32 @@ public class User extends Model<User> {
     protected Serializable pkVal() {
         return this.userId;
     }
+    
+    public String getPassword() {
+		return password;
+	}
 
-    @Override
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Date getModTime() {
+		return modTime;
+	}
+
+	public void setModTime(Date modTime) {
+		this.modTime = modTime;
+	}
+
+	public DelState getDelState() {
+		return delState;
+	}
+
+	public void setDelState(DelState delState) {
+		this.delState = delState;
+	}
+
+	@Override
     public String toString() {
         return "Bootplus_system_user{" +
         "userId=" + userId +
@@ -99,4 +133,8 @@ public class User extends Model<User> {
         ", remark=" + remark +
         "}";
     }
+	public static void main(String[] args) {
+		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		System.err.println(date.format(new Date()));
+	}
 }

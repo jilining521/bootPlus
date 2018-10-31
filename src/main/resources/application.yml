@@ -3,6 +3,9 @@ server:
   port: 8089
   servlet:
     context-path: /bootPlus
+    session:
+      timeout:
+        3000
 # spring配置
 spring:
   # 文件上传配置
@@ -37,7 +40,7 @@ spring:
 # mybatis-plus配置
 mybatis-plus:
   mapper-locations:
-  - classpath:cn/imp/bootplus/mapper/*/*Mapper.xml
+  - classpath:/mapper/*/*Mapper.xml
   type-aliases-package: cn.imp.bootplus.entity
 # 日志配置
 logging:

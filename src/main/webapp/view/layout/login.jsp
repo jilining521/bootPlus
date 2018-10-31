@@ -13,11 +13,11 @@
 <!-- CSS -->
 <link rel="stylesheet"
 	href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-<link rel="stylesheet" href="/static/assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="/static/assets/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/static/assets/css/form-elements.css">
-<link rel="stylesheet" href="/static/assets/css/style.css">
+	href="${pageContext.request.contextPath}/static/assets/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/form-elements.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/style.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -62,12 +62,12 @@
 							<form role="form" action="${pageContext.request.contextPath}/sign" method="post" class="login-form">
 								<div class="form-group">
 									<label class="sr-only" for="form-username">用户名</label> <input
-										type="text" name="form-username" placeholder="用户名..."
+										type="text" name="username" placeholder="用户名..."
 										class="form-username form-control" id="form-username">
 								</div>
 								<div class="form-group">
 									<label class="sr-only" for="form-password">密码</label> <input
-										type="password" name="form-password" placeholder="密码..."
+										type="password" name="password" placeholder="密码..."
 										class="form-password form-control" id="form-password">
 								</div>
 								<button type="submit" class="btn">登录</button>
@@ -81,10 +81,10 @@
 	</div>
 
 	<!-- Javascript -->
-	<script src="/static/assets/js/jquery-1.11.1.min.js"></script>
-	<script src="/static/assets/bootstrap/js/bootstrap.min.js"></script>
-	<script src="/static/assets/js/jquery.backstretch.min.js"></script>
-	<script src="/static/assets/js/scripts.js"></script>
+	<script src="${pageContext.request.contextPath}/static/assets/js/jquery-1.11.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/static/assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/static/assets/js/jquery.backstretch.min.js"></script>
+	<script src="${pageContext.request.contextPath}/static/assets/js/scripts.js"></script>
 
 	<!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
